@@ -1,4 +1,4 @@
-- name: 'Deploy our Cloud-init VMs' 
+- name: 'Check disk' 
   hosts: "{{ w_host | default('test') }}"
   tasks:  
     - name: checking the free disk space
