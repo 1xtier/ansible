@@ -2,7 +2,7 @@
   hosts: "{{ w_host | default('test') }}"
   tasks:  
     - name: checking the free disk space
-      ansible.builtin.shell: df -h  
+      ansible.builtin.shell: df -h | grep -v "tmpfs"
       register: check_disk
     - name: Display checking the free disk space
       ansible.builtin.debug:
